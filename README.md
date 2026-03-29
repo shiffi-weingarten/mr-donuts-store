@@ -2,7 +2,7 @@
 
 # Mr. Donuts - חנות דונאטס דיגיטלית 🍩
 
-### 🔗 [כניסה לאתר החי (Live Demo)](https://mr-donuts-app.netlify.app/products)
+### 🔗 [כניסה לאתר החי (Live Demo)](https://mr-donuts-app.netlify.app/)
 
 ---
 
