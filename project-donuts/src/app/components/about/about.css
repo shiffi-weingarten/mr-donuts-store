@@ -1,0 +1,151 @@
+:root {
+    --color-primary-pink: #ff0070;
+    /* ורוד הדונאטס הראשי - עז יותר */
+    --color-secondary-brown: #5c3f3f;
+    /* חום שוקולד כהה לכותרות וטקסט */
+    --color-accent-cream: #fff8f5;
+    /* רקע קרמי בהיר */
+    --color-shadow: rgba(92, 63, 63, 0.2);
+    /* צל חום שוקולד עדין */
+}
+
+/* החלפת הצבעים הקיימים למשתנים החדשים */
+.text-pink {
+    color: var(--color-primary-pink);
+}
+
+.text-dark-pink {
+    color: var(--color-secondary-brown);
+}
+
+.bg-light-pink {
+    background-color: var(--color-accent-cream);
+}
+
+/* רקע כללי של העמוד */
+.about-page-wrapper {
+    background-color: #ffffff;
+    /* רקע לבן נקי */
+    overflow-x: hidden;
+    /* מומלץ לוודא שהפונט הזה נטען בפרויקט (לדוגמה דרך Google Fonts) */
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+}
+
+/* ------------------------------------------------ */
+/* 2. עיצוב כללי - כותרת ואפקטים */
+/* ------------------------------------------------ */
+
+.about-header {
+    /* הוספת שיפוע עדין לרקע הכותרת */
+    background: linear-gradient(135deg, var(--color-accent-cream) 0%, #ffffff 100%);
+    padding: 80px 0;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* אפקט תלת-ממדי עדין לכותרת הראשית */
+.about-header h1 {
+    letter-spacing: 2px;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 5px var(--color-shadow);
+}
+
+/* ------------------------------------------------ */
+/* 3. כרטיסיות העקרונות (Mat-Card) - אפקט קפיצה */
+/* ------------------------------------------------ */
+.about-card {
+    border: none;
+    background-color: #ffffff;
+    border-radius: 15px;
+    /* פינות מעוגלות יותר */
+    box-shadow: 0 4px 15px var(--color-shadow);
+    /* מעבר חלק יותר לכל האפקטים */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: center;
+    padding: 30px;
+}
+
+.about-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 15px 30px var(--color-shadow);
+    transition: all 0.6s ease;
+
+}
+
+.about-card mat-card-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--color-secondary-brown);
+}
+
+.story-section {
+    padding: 50px;
+    border-radius: 25px;
+    margin-bottom: 60px;
+    border: 3px solid var(--color-primary-pink);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-circle-img {
+    overflow: hidden;
+    max-width: 400px;
+    transition: all 3s ease;
+    margin: 0 auto;
+}
+
+.rounded-circle-img img {
+    border: 5px solid var(--color-accent-cream);
+    /* מסגרת קרמית סביב התמונה */
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-15px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+
+  
+
+}
+
+.cta-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.cta-button {
+    background-color: var(--color-primary-pink);
+    color: rgb(236, 228, 228);
+    font-size: 1.5rem;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 19px #c7004c;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #c7004c;
+    box-shadow: 0 2px 0 #c7004c;
+    transform: translateY(0px);
+    transition: all 0.9s ease;
+
+}

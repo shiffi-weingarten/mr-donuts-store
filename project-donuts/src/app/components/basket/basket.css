@@ -1,0 +1,131 @@
+
+.container {
+    max-width: 900px;
+}
+
+.header {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.item-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.checkout-btn {
+    background-color: #f7005c !important; 
+    color: white !important;
+    font-weight: bold;
+}
+
+
+
+.quantity-counter-box {
+    height: 40px; 
+    
+    border-radius: 20px; 
+    border: 1px solid #dee2e6; 
+    box-shadow: none; 
+    overflow: hidden; 
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.quantity-counter-box:hover {
+    border-color: #ff0070;
+}
+
+
+.quantity-value {
+    min-width: 35px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #5c3f3f;
+    background-color: #fff8f5; /* רקע קרמי בהיר (צבע Accent) */
+    
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    padding: 0 5px;
+}
+
+.counter-btn {
+    padding: 0 !important;
+    min-width: 40px !important; 
+    height: 100% !important;
+    line-height: 40px !important;
+    margin: 0 !important;
+    
+    background-color: transparent !important; 
+    color: #ff0070 !important; /* סמל ורוד */
+    transition: all 0.2s ease;
+}
+
+.counter-btn:hover {
+    background-color: #ffe8f0 !important; /* רקע ורוד בהיר מאוד בריחוף */
+    transform: none; /* ביטול אפקט ה-Scale */
+}
+
+
+/* ------------------------------------------------ */
+/* 🎨 עיצוב כפתור המחיקה (Delete) - עגול ומינימליסטי */
+/* ------------------------------------------------ */
+
+.col-1 .mat-icon-button {
+    /* שימוש בצבע המערכת הסטנדרטי, אך עם מסגרת עגולה */
+    background-color: transparent; 
+    color: #721c24 !important; /* אדום כהה עדין */
+    border-radius: 50%; 
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+}
+
+.col-1 .mat-icon-button:hover {
+    background-color: #f5c6cb; /* אדום חלש בריחוף */
+    transform: none; /* ביטול אפקט הסיבוב */
+}
+
+
+
+@media (max-width: 576px) {
+    .header {
+        display: none; 
+    }
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.9rem;
+    }
+    .col-4, .col-2, .col-3, .col-1 {
+        width: 100% !important;
+        text-align: left !important;
+        margin-bottom: 5px;
+    }
+    
+    .quantity-counter-box {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}
+
+/* HTML
+<div class="col-3 text-center">
+    <div class="quantity-counter-box d-inline-flex align-items-stretch">
+        
+        <button mat-icon-button color="warn" (click)="decreaseQuantity(item.id)" class="counter-btn counter-minus">
+            <mat-icon>remove</mat-icon>
+        </button>
+        
+        <span class="fw-bold quantity-value d-flex align-items-center justify-content-center">
+            {{ item.amount }}
+        </span> 
+        
+      
+       /* <button mat-icon-button color="primary" (click)="increaseQuantity(item)" class="counter-btn counter-plus">
+            <mat-icon>add</mat-icon>
+        </button> */
+        
+    /* </div>
+</div> */ 

@@ -1,0 +1,166 @@
+/* src/app/components/mat-dialog/mat-dialog.css */
+
+:host {
+    --primary-color: #f7005c;
+    --card-radius: 20px;
+    /* משתני צבע שנדרשים לעיצוב מונה הכמות */
+    --accent-cream: #fff8f5; 
+    --dark-brown: #5c3f3f;
+    --highlight-pink: #ff0070; /* הצבע הורוד העז למסגרת */
+}
+
+/* ביטול ריפוד ברירת מחדל של הדיאלוג */
+::ng-deep .custom-dialog-container .mat-mdc-dialog-container {
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: var(--card-radius);
+}
+
+.card-dialog-container {
+    background: white;
+    overflow: hidden;
+    border-radius: var(--card-radius);
+    max-height: 90vh; /* מונע חריגה מהמסך */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- חלק עליון: תמונה --- */
+.dialog-image-header {
+    position: relative;
+    width: 100%;
+    height: 200px; 
+    background-color: #f0f0f0;
+    flex-shrink: 0;
+}
+
+.dialog-image-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* כפתור סגירה צף */
+.floating-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background 0.2s;
+}
+.floating-close-btn:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+/* --- חלק תחתון: גוף --- */
+.dialog-body {
+    padding: 20px 25px;
+    overflow-y: auto; 
+}
+
+.dialog-title {
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.6rem;
+}
+
+.price-tag {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+/* 🛑 כללים ישנים של מונה הכמות (במקום זה נשתמש בחדשים) */
+/* .quantity-pill, .amount-text, .small-icon-btn - הכללים האלה לא נחוצים יותר */
+
+
+/* ------------------------------------------------ */
+/* 🛑 עיצוב מונה הכמות (Quantity Counter) - גרסת הקפסולה המדויקת */
+/* ------------------------------------------------ */
+
+/* המיכל הראשי של הפלוס/מינוס/כמות (הקפסולה הארוכה) */
+.quantity-counter-box {
+    /* גודל קבוע לכל הקבוצה */
+    height: 40px; 
+    
+    /* מראה כמו בתמונה: פינות ארוכות ומעוגלות, מסגרת ורודה */
+    border-radius: 25px; 
+    border: 2px solid var(--highlight-pink); /* מסגרת ורודה עבה וברורה */
+    box-shadow: 0 2px 8px rgba(255, 0, 112, 0.2); /* צל קל */
+    overflow: hidden; 
+    background-color: white;
+    
+    /* מוודא שהאלמנטים בפנים נמתחים וצמודים */
+    display: inline-flex;
+    align-items: stretch; /* מתיחה אנכית */
+    transition: all 0.2s ease;
+}
+
+
+/* שדה הכמות (המספר 1 באמצע) */
+.quantity-value {
+    min-width: 40px;
+    font-size: 1.2rem; 
+    font-weight: 700;
+    color: var(--dark-brown); 
+    background-color: var(--accent-cream); /* רקע קרמי בהיר */
+    
+    /* מפריד את המספר מהכפתורים */
+    border-left: 1px solid var(--highlight-pink);
+    border-right: 1px solid var(--highlight-pink);
+    padding: 0 5px;
+
+    /* ממקם את המספר במרכז אנכית */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* כפתורי הפלוס והמינוס (החלקים הורודים/לבנים) */
+.counter-btn {
+    /* מאפס את גודל כפתורי Material */
+    padding: 0 !important;
+    width: 40px !important; 
+    height: 100% !important; /* תופס את כל גובה הקפסולה */
+    line-height: 40px !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    
+    /* צבע סמל: ורוד עז */
+    background-color: transparent !important; 
+    color: var(--highlight-pink) !important; 
+    
+    transition: background-color 0.2s;
+}
+
+/* ריחוף על הכפתורים - ממלא בצבע בהיר */
+.counter-btn:hover {
+    background-color: #ffe8f0 !important; 
+    transform: none; 
+}
+
+
+/* כפתור הוספה (נשאר כפתור פעולה ראשי) */
+.add-btn {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-radius: 50px;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(247, 0, 92, 0.3);
+    margin-top: 10px;
+}
+
+.icon-rtl {
+    margin-right: 8px;
+}

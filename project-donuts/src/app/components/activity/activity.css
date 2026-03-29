@@ -1,0 +1,34 @@
+
+/* Custom Table Styling */
+.activity-table {
+    width: 100%;
+}
+
+.element-row {
+    transition: background-color 0.2s;
+}
+
+.element-row:hover {
+    background-color: #f8fafc;
+}
+
+td.mat-mdc-cell {
+    border-bottom-color: #f1f5f9;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+th.mat-mdc-header-cell {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Badge colors for standard bootstrap classes if not loaded */
+.bg-success-subtle { background-color: #d1fae5 !important; }
+.text-success { color: #065f46 !important; }
+.bg-danger-subtle { background-color: #fee2e2 !important; }
+.text-danger { color: #991b1b !important; }
+.bg-primary-subtle { background-color: #dbeafe !important; }
+.text-primary { color: #1e40af !important; }

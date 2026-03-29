@@ -1,0 +1,42 @@
+<div class="container-fluid py-5 px-lg-5">
+<!--     
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary-pink">הדונאטס שלנו 🍩</h1>
+        <p class="lead text-muted">בחרו את הטעם המושלם שלכם מתוך המבחר האיכותי שלנו.</p>
+    </div> -->
+
+    <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-4">
+
+        <div *ngFor="let item of product" class="col">
+            
+            <div class="card product-card shadow-lg h-100"
+                 (click)="openProductDetails(item)"
+                 tabindex="0"
+                 style="cursor: pointer;">
+
+                <div class="image-container">
+                    <img [src]="item.imageUrl" alt="{{ item.name }}"
+                         class="card-img-top product-image" />
+                </div>
+                
+                <div class="card-body d-flex flex-column text-center">
+
+                    <h5 class="card-title product-name fw-bold">{{ item.name }}</h5>
+
+                    <p class="card-text price-text fw-bolder">
+                        {{ item.priceUSD | currency:'USD':'symbol':'1.2-2' }}
+                    </p>
+
+                    <p class="card-text department-text" 
+                       [style.color]="item.departmentId | pipeDepartmentStyle">department: {{ item.departmentId }}</p>
+                    
+                    <div class="mt-auto d-grid gap-2">
+                        <button mat-raised-button color="primary" class="add-to-cart-btn"
+                                (click)="$event.stopPropagation(); addToCart(item)">
+                            <mat-icon>add_shopping_cart</mat-icon>add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

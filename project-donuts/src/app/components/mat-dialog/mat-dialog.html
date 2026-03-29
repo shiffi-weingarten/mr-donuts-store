@@ -1,0 +1,48 @@
+<div class="card-dialog-container">
+
+    <div class="dialog-image-header">
+        <img [src]="data.product.imageUrl" alt="{{ data.product.name }}">
+        
+        <button mat-icon-button (click)="closePopup(false)" class="floating-close-btn">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <div class="dialog-body">
+        
+        <h2 class="text-center fw-bold mb-2 dialog-title">{{ data.product.name }}</h2>
+        
+        <p class="text-center text-muted small mb-4">
+            {{ data.product.details }}
+        </p>
+
+        <hr class="opacity-25 my-3">
+
+        <div class="d-flex justify-content-between align-items-center mb-4 px-2">
+            
+            <div class="price-tag">
+                {{ data.product.priceUSD | currency:'USD':'symbol':'1.2-2' }}
+            </div>
+
+            <div class="quantity-counter-box d-inline-flex align-items-stretch">
+                
+                <button mat-icon-button class="counter-btn" (click)="decreaseAmount()" [disabled]="amount <= 1">
+                    <mat-icon>remove</mat-icon>
+                </button>
+                
+                <span class="fw-bold quantity-value">{{ amount }}</span>
+                
+                <button mat-icon-button class="counter-btn" (click)="increaseAmount()">
+                    <mat-icon>add</mat-icon>
+                </button>
+                
+            </div>
+            </div>
+
+        <button mat-raised-button color="primary" class="w-100 add-btn" (click)="closePopup(true)">
+            הוסף לסל 
+            <mat-icon class="ms-2 icon-rtl">shopping_cart</mat-icon>
+        </button>
+
+    </div>
+</div>

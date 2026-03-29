@@ -1,0 +1,26 @@
+
+@import "bootstrap/dist/css/bootstrap.min.css"; 
+
+
+html, body { height: 100%; }
+body { 
+    padding-top: 70px; 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.cdk-overlay-dark-backdrop {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+
+    backdrop-filter: blur(5px) !important;
+    
+    transition: background-color 0.4s ease-in-out, backdrop-filter 0.4s ease-in-out;
+}
+
+
+.snackbar-top-right {
+    margin-top: 80px !important;
+    max-width: 350px !important; 
+    right: 20px !important;
+    left: auto !important;
+}

@@ -1,0 +1,60 @@
+
+<div class="container mt-5 animate-fade-in" style="max-width: 1000px;">
+  
+  <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 class="fw-bold mb-1">your actions</h2>
+        <p class="text-muted mb-0">tracking your actions on website</p>
+      </div>
+      
+      <div class="d-flex gap-2">
+        <button mat-stroked-button (click)="toggleSort()" class="rounded-pill bg-white">
+          <mat-icon>{{ (sortOrder$ | async) === 'asc' ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+          {{ (sortOrder$ | async) === 'asc' ? 'oldes' : 'newest' }}
+        </button>
+        <button mat-flat-button color="warn" (click)="clearAllLogs()" class="rounded-pill">
+            erase all history
+        </button>
+      </div>
+  </div>
+
+  <div class="bg-white rounded-4 shadow-sm overflow-hidden border">
+      <table mat-table [dataSource]="(sortedLog$ | async) ?? []" class="w-100 activity-table">
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef class="bg-light ps-4 py-3 text-muted fw-bold"> date and time</th>
+          <td mat-cell *matCellDef="let element" class="ps-4 text-muted font-monospace small"> 
+             {{ element.date | date: 'dd/MM/yyyy HH:mm' }} 
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actionName">
+          <th mat-header-cell *matHeaderCellDef class="bg-light py-3 text-muted fw-bold"> action </th>
+          <td mat-cell *matCellDef="let element"> 
+            <span class="badge rounded-pill fw-normal px-3 py-2" 
+                  [ngClass]="{
+                    'bg-success-subtle text-success': element.actionName.includes('add') || element.actionName.includes('+'),
+                    'bg-danger-subtle text-danger': element.actionName.includes('erase') || element.actionName.includes('-'),
+                    'bg-primary-subtle text-primary': !element.actionName.includes('add') && !element.actionName.includes('מחיקה')
+                  }">
+                {{ element.actionName }}
+            </span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="productName">
+          <th mat-header-cell *matHeaderCellDef class="bg-light py-3 text-muted fw-bold"> פרטים </th>
+          <td mat-cell *matCellDef="let element" class="fw-medium text-dark"> {{ element.productName }} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['date', 'actionName', 'productName']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['date', 'actionName', 'productName'];" class="element-row"></tr>
+        
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell text-center py-5" colspan="3">
+                <div class="text-muted">no actions found</div>
+            </td>
+        </tr>
+      </table>
+  </div>
+</div>

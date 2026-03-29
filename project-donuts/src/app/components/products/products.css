@@ -1,0 +1,73 @@
+/* src/app/components/products/products.css */
+
+/* צבעים מותאמים אישית */
+.container-fluid .display-5 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+.text-primary-pink {
+    color: #f7005c;
+}
+
+.price-text {
+    color: #ffd700;
+    font-size: 1.4rem;
+}
+
+/* 1. עיצוב כרטיס המוצר הראשי */
+.product-card {
+    min-height: 420px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-color: #ffffff;
+    border: none;
+}
+
+/* אפקט Hover: הגדלה וצל חזק */
+.product-card:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 2. עיצוב התמונה ואפקט ההובר שלה */
+.image-container {
+    height: 220px;
+    /* גובה קבוע לתמונה */
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* הגדלת התמונה בהובר */
+.product-card:hover .product-image {
+    transform: scale(1.08) translateY(-10px);
+}
+
+/* 3. עיצוב כפתור ההוספה לסל */
+.add-to-cart-btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* 💥 FIX: פונט מודרני לכפתור */
+    background-color: #f7005c !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* src/styles.css - גלובלי */
+
+.mat-mdc-dialog-container {
+    /* 💥 אם הדיאלוג רחב מדי, זה כופה רוחב מקסימלי */
+    max-width: 650px !important; 
+}

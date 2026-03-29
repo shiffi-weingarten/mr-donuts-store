@@ -1,0 +1,113 @@
+
+/* pink */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.navbar-nav .nav-link {
+    font-family: 'Poppins', sans-serif;
+    color: white !important;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.active-link {
+    color: #e91e63 !important;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav .nav-link .mat-icon {
+    vertical-align: middle;
+    margin-top: -4px;
+    color: inherit;
+    font-size: 26px;
+}
+
+.navbar-nav .nav-link:has(.mat-icon):hover {
+    background-color: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-nav .badge {
+position: absolute;
+top: 2px;
+right: 2px;
+background-color: white;
+color: #e91e63;
+font-weight: bold;
+font-size: 0.7rem;
+padding: 4px 6px;
+border-radius: 50%;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/*white*/
+
+/* 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.navbar-nav .nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.active-link {
+    background-color: white !important;
+    color: #e91e63 !important;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav .nav-link .mat-icon {
+    vertical-align: middle;
+    margin-top: -4px;
+    color: inherit;
+    font-size: 26px;
+}
+
+.navbar-nav .nav-link:has(.mat-icon):hover {
+    background-color: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-nav .badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: white;
+    color: #e91e63;
+    font-weight: bold;
+    font-size: 0.7rem;
+    padding: 4px 6px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+} */
